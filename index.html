@@ -2,7 +2,27 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0a0e27">
+    <meta name="description" content="Portfolio Ahmad Faiz Al Ghifari - Software Engineer">
+    <meta name="author" content="Ahmad Faiz Al Ghifari">
+    <meta name="keywords" content="software engineer, backend developer, portfolio, ahmad faiz al ghifari">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Faiz Portfolio">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Icons for PWA -->
+    <link rel="apple-touch-icon" href="https://z-cdn-media.chatglm.cn/files/13f384f0-7b2b-4450-9d11-c1957b80539d_faiz3x4.png?auth_key=1788317725-9964f88adeb44e15a172c1960866fee2-0-18d523af1c0caff7fb0f263214ebe3ae">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://z-cdn-media.chatglm.cn/files/13f384f0-7b2b-4450-9d11-c1957b80539d_faiz3x4.png?auth_key=1788317725-9964f88adeb44e15a172c1960866fee2-0-18d523af1c0caff7fb0f263214ebe3ae">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://z-cdn-media.chatglm.cn/files/13f384f0-7b2b-4450-9d11-c1957b80539d_faiz3x4.png?auth_key=1788317725-9964f88adeb44e15a172c1960866fee2-0-18d523af1c0caff7fb0f263214ebe3ae">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://z-cdn-media.chatglm.cn/files/13f384f0-7b2b-4450-9d11-c1957b80539d_faiz3x4.png?auth_key=1788317725-9964f88adeb44e15a172c1960866fee2-0-18d523af1c0caff7fb0f263214ebe3ae">
+    
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQWhtYWQgRmFpeiBBbCBHaGlmYXJpIC0gUG9ydGZvbGlvIiwic2hvcnRfbmFtZSI6IkZhaXogUG9ydGZvbGlvIiwiZGVzY3JpcHRpb24iOiJTb2Z0d2FyZSBFbmdpbmVlciBQb3J0Zm9saW8iLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBhMGUyNyIsInRoZW1lX2NvbG9yIjoiIzBhMGUyNyIsIm9yaWVudGF0aW9uIjoicG9ydHJhaXQtcHJpbWFyeSIsImljb25zIjpbeyJzcmMiOiJodHRwczovL3otY2RuLW1lZGlhLmNoYXRnbG0uY24vZmlsZXMvMTNmMzg0ZjAtN2IyYi00NDUwLTlkMTEtYzE5NTdiODA1MzlkX2ZhaXozeDQucG5nP2F1dGhfa2V5PTE3ODgzMTc3MjUtOTk2NGY4OGFkZWI0NGUxNWExNzJjMTk2MDg2NmZlZTItMC0xOGQ1MjNhZjFjMGNhZmY3YmYwZjI2MzIxNGViZTNhZSIsInNpemVzIjoiMTkyeDE5MiIsInR5cGUiOiJpbWFnZS9wbmcifV19">
+    
     <title>Ahmad Faiz Al Ghifari - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -22,6 +42,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
         
         body {
@@ -29,6 +50,7 @@
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         
         .container {
@@ -36,6 +58,24 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
         }
         
         /* Header & Navigation */
@@ -49,6 +89,7 @@
             backdrop-filter: blur(10px);
             padding: 15px 0;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
         
         .nav-container {
@@ -62,10 +103,17 @@
             font-weight: 700;
             color: var(--accent);
             text-decoration: none;
+            display: flex;
+            align-items: center;
         }
         
         .logo span {
             color: var(--primary);
+        }
+        
+        .logo i {
+            margin-right: 8px;
+            font-size: 1.8rem;
         }
         
         nav ul {
@@ -83,6 +131,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 1rem;
         }
         
         nav ul li a:hover {
@@ -108,6 +157,7 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--light);
         }
         
         /* Hero Section */
@@ -117,6 +167,19 @@
             align-items: center;
             padding-top: 80px;
             background: linear-gradient(135deg, rgba(10, 14, 39, 0.9), rgba(67, 97, 238, 0.2)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(67, 97, 238, 0.1) 0%, transparent 50%);
+            z-index: 1;
         }
         
         .hero-content {
@@ -124,6 +187,8 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            position: relative;
+            z-index: 2;
         }
         
         .hero-text {
@@ -138,23 +203,30 @@
             background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.8s ease-out;
         }
         
         .hero-text h2 {
             font-size: 1.8rem;
             margin-bottom: 25px;
             color: var(--light);
+            animation: fadeInUp 0.8s ease-out 0.2s;
+            animation-fill-mode: both;
         }
         
         .hero-text p {
             font-size: 1.1rem;
             margin-bottom: 30px;
             color: #b8bcc8;
+            animation: fadeInUp 0.8s ease-out 0.4s;
+            animation-fill-mode: both;
         }
         
         .hero-buttons {
             display: flex;
             gap: 20px;
+            animation: fadeInUp 0.8s ease-out 0.6s;
+            animation-fill-mode: both;
         }
         
         .btn {
@@ -167,6 +239,26 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            transform: translateX(0);
         }
         
         .btn-primary {
@@ -195,6 +287,24 @@
             flex: 1;
             display: flex;
             justify-content: center;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .profile-img {
@@ -210,6 +320,7 @@
         .about {
             padding: 100px 0;
             background: linear-gradient(180deg, var(--dark), #0f172a);
+            position: relative;
         }
         
         .section-title {
@@ -263,12 +374,18 @@
             max-width: 400px;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.03);
         }
         
         /* Experience Section */
         .experience {
             padding: 100px 0;
             background: #0f172a;
+            position: relative;
         }
         
         .timeline {
@@ -338,6 +455,12 @@
             border-radius: 10px;
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.3);
         }
         
         .timeline-content h3 {
@@ -380,6 +503,7 @@
         .education {
             padding: 100px 0;
             background: linear-gradient(180deg, #0f172a, #1e293b);
+            position: relative;
         }
         
         .edu-cards {
@@ -396,6 +520,18 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .edu-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
         }
         
         .edu-card:hover {
@@ -430,12 +566,17 @@
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--light);
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(67, 97, 238, 0.2);
+            border-radius: 20px;
         }
         
         /* Skills Section */
         .skills {
             padding: 100px 0;
             background: #1e293b;
+            position: relative;
         }
         
         .skills-container {
@@ -464,6 +605,21 @@
             margin-bottom: 20px;
             color: var(--accent);
             text-align: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .skill-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
         }
         
         .skill-list {
@@ -474,6 +630,12 @@
             margin-bottom: 15px;
             display: flex;
             align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
         }
         
         .skill-list li i {
@@ -486,6 +648,7 @@
         .contact {
             padding: 100px 0;
             background: linear-gradient(180deg, #1e293b, var(--dark));
+            position: relative;
         }
         
         .contact-container {
@@ -514,6 +677,15 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(67, 97, 238, 0.1);
+            transform: translateX(5px);
         }
         
         .contact-item i {
@@ -547,6 +719,7 @@
             display: block;
             margin-bottom: 8px;
             color: var(--light);
+            font-weight: 500;
         }
         
         .form-group input,
@@ -627,6 +800,126 @@
             font-size: 0.9rem;
         }
         
+        /* Install PWA Banner */
+        .install-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+            animation: slideUp 0.5s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translate(-50%, 100px);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
+        }
+        
+        .install-banner.hide {
+            animation: slideDown 0.5s ease-out forwards;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
+            to {
+                transform: translate(-50%, 100px);
+                opacity: 0;
+            }
+        }
+        
+        .install-banner-text {
+            flex: 1;
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+        
+        .install-banner-text strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 3px;
+        }
+        
+        .install-btn, .install-dismiss {
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .install-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+        
+        .install-btn:hover {
+            background: var(--secondary);
+        }
+        
+        .install-dismiss {
+            background: transparent;
+            color: var(--gray);
+            border: 1px solid var(--gray);
+        }
+        
+        .install-dismiss:hover {
+            color: var(--light);
+            border-color: var(--light);
+        }
+        
+        /* Loading Spinner */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero-content {
@@ -670,6 +963,7 @@
                 transform: translateY(-150%);
                 transition: transform 0.3s ease;
                 z-index: 1000;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             }
             
             nav ul.active {
@@ -697,6 +991,18 @@
             .right {
                 left: 0;
             }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.5rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -715,6 +1021,7 @@
             
             .btn {
                 width: 80%;
+                margin-bottom: 10px;
             }
             
             .profile-img {
@@ -723,16 +1030,56 @@
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            .about-content {
+                gap: 30px;
+            }
+            
+            .contact-container {
+                gap: 30px;
+            }
+            
+            .install-banner {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+            
+            .install-banner-text {
+                text-align: center;
+            }
+            
+            .install-btn, .install-dismiss {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Loading Spinner -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Install PWA Banner -->
+    <div class="install-banner" id="install-banner">
+        <div class="install-banner-text">
+            <strong>Install Aplikasi</strong>
+            Pasang aplikasi portfolio ini di perangkat Anda
+        </div>
+        <button class="install-btn" id="install-btn">Install</button>
+        <button class="install-dismiss" id="install-dismiss">Nanti</button>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">Portfo<span>lio</span></a>
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i>
+                Portfo<span>lio</span>
+            </a>
             <nav>
                 <ul>
                     <li><a href="#home">Beranda</a></li>
@@ -917,18 +1264,18 @@
                 </div>
                 <div class="contact-form">
                     <h3>Kirim Pesan</h3>
-                    <form>
+                    <form id="contact-form">
                         <div class="form-group">
                             <label for="name">Nama</label>
-                            <input type="text" id="name" placeholder="Nama Anda">
+                            <input type="text" id="name" name="name" placeholder="Nama Anda" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="Email Anda">
+                            <input type="email" id="email" name="email" placeholder="Email Anda" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Pesan</label>
-                            <textarea id="message" placeholder="Pesan Anda"></textarea>
+                            <textarea id="message" name="message" placeholder="Pesan Anda" required></textarea>
                         </div>
                         <button type="submit" class="form-btn">Kirim Pesan</button>
                     </form>
@@ -953,6 +1300,90 @@
     </footer>
 
     <script>
+        // Service Worker Registration for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Create a simple service worker inline
+                const swContent = `
+                    self.addEventListener('install', event => {
+                        event.waitUntil(
+                            caches.open('portfolio-v1').then(cache => {
+                                return cache.addAll([
+                                    '/',
+                                    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+                                    'https://z-cdn-media.chatglm.cn/files/13f384f0-7b2b-4450-9d11-c1957b80539d_faiz3x4.png?auth_key=1788317725-9964f88adeb44e15a172c1960866fee2-0-18d523af1c0caff7fb0f263214ebe3ae'
+                                ]);
+                            })
+                        );
+                    });
+                    
+                    self.addEventListener('fetch', event => {
+                        event.respondWith(
+                            caches.match(event.request).then(response => {
+                                return response || fetch(event.request);
+                            })
+                        );
+                    });
+                `;
+                
+                const blob = new Blob([swContent], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then(registration => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+        
+        // PWA Install Banner
+        let deferredPrompt;
+        const installBanner = document.getElementById('install-banner');
+        const installBtn = document.getElementById('install-btn');
+        const installDismiss = document.getElementById('install-dismiss');
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent Chrome 76 and earlier from automatically showing the prompt
+            e.preventDefault();
+            // Stash the event so it can be triggered later
+            deferredPrompt = e;
+            // Show the install banner
+            installBanner.style.display = 'flex';
+        });
+        
+        installBtn.addEventListener('click', () => {
+            // Hide the banner
+            installBanner.style.display = 'none';
+            // Show the install prompt
+            deferredPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                } else {
+                    console.log('User dismissed the install prompt');
+                }
+                deferredPrompt = null;
+            });
+        });
+        
+        installDismiss.addEventListener('click', () => {
+            installBanner.classList.add('hide');
+            setTimeout(() => {
+                installBanner.style.display = 'none';
+                installBanner.classList.remove('hide');
+            }, 500);
+        });
+        
+        // Hide install banner if app is already installed
+        window.addEventListener('appinstalled', () => {
+            installBanner.style.display = 'none';
+            console.log('PWA was installed');
+        });
+        
         // Mobile Menu Toggle
         const mobileMenu = document.querySelector('.mobile-menu');
         const navMenu = document.querySelector('nav ul');
@@ -1010,6 +1441,73 @@
                 header.style.background = 'rgba(10, 14, 39, 0.9)';
             }
         });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the form data to a server
+            // For this example, we'll just show a success message
+            const formBtn = document.querySelector('.form-btn');
+            const originalText = formBtn.textContent;
+            
+            // Show loading state
+            formBtn.textContent = 'Mengirim...';
+            formBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Reset form
+                contactForm.reset();
+                
+                // Show success message
+                formBtn.textContent = 'Pesan Terkirim!';
+                formBtn.style.background = 'linear-gradient(to right, #2ecc71, #27ae60)';
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    formBtn.textContent = originalText;
+                    formBtn.style.background = 'linear-gradient(to right, var(--primary), var(--secondary))';
+                    formBtn.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
+        
+        // Hide loader when page is loaded
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 500);
+        });
+        
+        // Add touch-friendly scrolling for mobile
+        if ('ontouchstart' in window) {
+            document.body.style.overflowScrolling = 'touch';
+            document.body.style.webkitOverflowScrolling = 'touch';
+        }
+        
+        // Optimize images for mobile
+        function optimizeImages() {
+            const images = document.querySelectorAll('img');
+            const isMobile = window.innerWidth <= 768;
+            
+            images.forEach(img => {
+                if (isMobile && img.classList.contains('profile-img')) {
+                    img.loading = 'eager';
+                } else {
+                    img.loading = 'lazy';
+                }
+            });
+        }
+        
+        optimizeImages();
+        window.addEventListener('resize', optimizeImages);
     </script>
 </body>
 </html>
